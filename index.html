@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src='https://unpkg.com/vue@3'></script>
+  <title>Carosello Vue</title>
+</head>
+<body>
+  <div id="app">
+    <main>
+      <div class="main-wrap">
+        <div class="wrap-slider">
+          <img :src="sliderItems[1].image" alt="sliderItems[0].title">
+          <!-- <img src="${item.image}" alt="${item.title}">
+          <div class="reference">
+            <h2 class="city">${item.title}</h2>
+            <p class="description">
+              ${item.description}
+            </p>
+          </div> -->
+        </div>
+        <div class="wrap-thumbs">
+          <div class="slider-thumbs">
+            <img class="thumb" src="" alt="">
+          </div>
+          <div class="slider-thumbs">
+            <img class="thumb" src="" alt="">
+          </div>
+          <div class="slider-thumbs">
+            <img class="thumb" src="" alt="">
+          </div>
+          <button class="btn-slide prev">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="btn-slide next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        
+      </div>
+      <!-- <div class="btn-container">
+        <button class="btn-autoplay reverse">Inverti l'ordine di scorrimento</button>
+        <button class="btn-autoplay stop">Interrompi lo scorrimento</button>
+      </div> -->
+    </main>
+
+  </div>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
