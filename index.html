@@ -14,7 +14,7 @@
     <main>
       <div class="main-wrap">
         <div class="wrap-slider">
-          <div v-for="(item, index) in sliderItems"    class="item-slider">
+          <div v-for="(item, index) in sliderItems"    class="item-slider" :class="{'active': index === counterIndex}">
             <img :src="item.image" :alt="item.title">
             <div class="reference">
               <h2 class="city">{{item.title}}</h2>
@@ -26,7 +26,7 @@
         </div>
         <div class="wrap-thumbs">
           <div class="slider-thumbs">
-            <img v-for="(item, index) in sliderItems" class="thumb" :src="item.image" :alt="item.title">
+            <img v-for="(item, index) in sliderItems" class="thumb" :src="item.image" @click="counterIndex=index" :alt="item.title" :class="{'active': index === counterIndex}">
           </div>
           <button class="btn-slide prev">
             <i class="fa-solid fa-chevron-left"></i>
