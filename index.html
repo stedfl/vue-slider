@@ -10,11 +10,13 @@
   <title>Carosello Vue</title>
 </head>
 <body>
+
   <div id="app">
     <main>
       <div @mouseenter="autoplayStop()" @mouseleave="autoplayStart()"  class="main-wrap">
+
         <div class="wrap-slider">
-          <div v-for="(item, index) in sliderItems"    class="item-slider" :class="{'active': index === counterIndex}">
+          <div v-for="(item, index) in sliderItems" class="item-slider" :class="{'active': index === counterIndex}">
             <img :src="item.image" :alt="item.title">
             <div class="reference">
               <h2 class="city">{{item.title}}</h2>
@@ -24,26 +26,27 @@
             </div> 
           </div>
         </div>
+
         <div class="wrap-thumbs">
           <div class="slider-thumbs">
             <img v-for="(item, index) in sliderItems" class="thumb" :src="item.image" @click="counterIndex=index" :alt="item.title" :class="{'active': index === counterIndex}">
           </div>
-          <button @click="changeImage('prev')" class="btn-slide prev">
+          <button @click="changeImage('prev'), direction='prev'" class="btn-slide prev">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button @click="changeImage('next')" class="btn-slide next">
+          <button @click="changeImage('next'), direction='next'" class="btn-slide next">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
-        
+
       </div>
-      <div class="btn-container">
-        <button @click="autoplayReverse()" class="btn-autoplay reverse">Inverti ordine di scorrimento</button>
-      </div>
+
+      <button @click="autoplayReverse()" class="btn-autoplay reverse">
+        Inverti ordine di scorrimento
+      </button>
+
     </main>
-
   </div>
-
 
   <script src="js/script.js"></script>
 </body>

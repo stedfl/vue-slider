@@ -109,10 +109,6 @@ main {
   right: 20px;
 }
 
-.btn-container {
-  margin-top: 2.5rem;
-}
-
 .btn-autoplay {
   background-color: #008ec8;
   padding: 10px 15px;
@@ -120,7 +116,7 @@ main {
   color: white;
   border-radius: 10px;
   border: 0;
-  margin: 5px;
+  margin-top: 2.5rem;
 }
 
 .btn-autoplay:hover {
