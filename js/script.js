@@ -34,6 +34,19 @@ createApp({
     }
   },
   methods: {
+    changeImage(direction) {
+      if (direction === "next") {
+        this.counterIndex++;
+       if (this.counterIndex === this.sliderItems.length) {
+        this.counterIndex = 0;
+       } 
+      } else {
+        this.counterIndex--;
+        if (this.counterIndex < 0) {
+          this.counterIndex = this.sliderItems.length - 1;
+         } 
+      }
+    }
   },
   mounted() {
 
