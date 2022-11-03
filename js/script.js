@@ -30,7 +30,9 @@ createApp({
           image: "https://cdn.sanity.io/images/24oxpx4s/prod/ed09eff0362396772ad50ec3bfb728d332eb1c30-3200x2125.jpg?w=1600&h=1063&fit=crop"
         }
       ],
-      counterIndex: 0
+      counterIndex: 0,
+      direction: "next",
+      clock: 0
     }
   },
   methods: {
@@ -40,18 +42,30 @@ createApp({
        if (this.counterIndex === this.sliderItems.length) {
         this.counterIndex = 0;
        } 
-      } else {
+      } else if (direction === "prev") {
         this.counterIndex--;
         if (this.counterIndex < 0) {
           this.counterIndex = this.sliderItems.length - 1;
          } 
       }
+    },
+    autoplayStart() {
+      this.clock = setInterval(() => {
+        this.changeImage(this.direction)
+      }, 3000);
+    },
+    autoplayStop() {
+      clearInterval(this.clock);
+    },
+    autoplayReverse() {
+      if (this.direction === "next") {
+        this.direction = "prev";
+      } else {
+        this.direction = "next";
+      }
     }
   },
   mounted() {
-
+    this.autoplayStart();
   },
-  created() {
-
-  }
 }).mount("#app");
